@@ -25,7 +25,7 @@ export default function HeroSection() {
             Industries We Serve
           </h1> */}
           {/* <p className="font-roboto font-normal text-lg sm:text-xl lg:text-2xl leading-relaxed mt-4 md:text-lg text-gray-200 max-w-4xl"> */}
-          <p className="banner-content  max-w-4xl leading-relaxed text-gray-200 !font-roboto">
+          <p className="banner-content  max-w-4xl  mt-[8px] leading-relaxed text-gray-200 !font-roboto">
             Supporting businesses across multiple sectors by connecting them
             with skilled professionals who understand industry-specific
             challenges and talent needs.
