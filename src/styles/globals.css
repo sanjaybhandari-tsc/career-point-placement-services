@@ -291,5 +291,5 @@ body {
   }
 }
 .Common_btn{
-   @apply py-[4px] px-[8px] text-[12px] md:text-[14px] lg:text-[18px] md:py-[6px] md:px-[12px] lg:py-[8px] lg:px-[16px];
+   @apply py-2 px-4 text-sm sm:px-6 sm:py-3;
 }
