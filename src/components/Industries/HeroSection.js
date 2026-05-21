@@ -25,7 +25,7 @@ export default function HeroSection() {
             Industries We Serve
           </h1> */}
           {/* <p className="font-roboto font-normal text-lg sm:text-xl lg:text-2xl leading-relaxed mt-4 md:text-lg text-gray-200 max-w-4xl"> */}
-          <p className="banner-content mt-4 max-w-4xl leading-relaxed text-gray-200 !font-roboto">
+          <p className="banner-content  max-w-4xl leading-relaxed text-gray-200 !font-roboto">
             Supporting businesses across multiple sectors by connecting them
             with skilled professionals who understand industry-specific
             challenges and talent needs.
@@ -46,15 +46,15 @@ export default function HeroSection() {
             </span>
             <span className=" left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 w-5 h-5 bg-[var(--color-primary)] rounded-full scale-0 group-hover:scale-[15] transition-transform duration-1000 origin-center"></span>
           </button> */}
-          <button className="mt-6 relative subheading-content-space overflow-hidden bg-[var(--color-primary-hover)] lg:bg-transparent border-0  lg:border-white w-40 sm:w-44 md:w-48 lg:w-50 h-10 sm:h-11 md:h-12 flex items-end justify-center gap-2.5 rounded-lg lg:border-[1.5px] px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 text-white group hover:border-transparent transition-colors  cursor-pointer">
+          <button className="mt-10 relative subheading-content-space overflow-hidden bg-[var(--color-primary-hover)] lg:bg-transparent border-0  lg:border-white  flex items-end justify-center gap-2.5 rounded-lg lg:border-[1.5px] Common_btn text-white group hover:border-transparent transition-colors  cursor-pointer">
             <Link href="/get-in-touch">
               <span className="relative z-10 flex items-center gap-2.5">
                 <p className="banner-content">Get in touch</p>
                 <Image
                   src="/images/about/sendIcon.svg"
                   alt="send Icon"
-                  width={24}
-                  height={24}
+                  width={20}
+                  height={20}
                 />
               </span>
 
