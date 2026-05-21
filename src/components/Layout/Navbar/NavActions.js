@@ -46,7 +46,7 @@ export default function NavActions({
         <Link
           href="/get-in-touch"
           onClick={closeMenu}
-          className="nav-items Common_btn w-fit bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white rounded-md cursor-pointer"
+          className="nav-items mt-1 Common_btn w-fit bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white rounded-md cursor-pointer"
           // className="mt-4 px-4 py-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white rounded-md cursor-pointer"
         >
           Get in touch
