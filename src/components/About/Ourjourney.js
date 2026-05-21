@@ -28,7 +28,7 @@ export default function Ourjourney() {
     }, []);
 
     return (
-        <div className='bg-[linear-gradient(180deg,rgba(250,250,250,0.25)_0%,rgba(3,155,230,0.12)_50%,rgba(250,250,250,0.25)_100%)] overflow-hidden w-full px-4 sm:px-6 md:px-16 lg:px-30 py-[28px] md:py-[40px] lg:py-[60px]'>
+        <div className='bg-[linear-gradient(180deg,rgba(250,250,250,0.25)_0%,rgba(3,155,230,0.12)_50%,rgba(250,250,250,0.15)_100%)] overflow-hidden w-full px-4 sm:px-6 md:px-16 lg:px-30 py-[28px] md:py-[40px] lg:py-[60px]'>
 
             <div className="journey-item opacity-0 -translate-y-10 transition-all duration-500 ease-out text-center pb-12 md:pb-20 lg:pb-20">
                 <h2 className="main-heading text-center">

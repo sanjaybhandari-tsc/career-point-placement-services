@@ -5,7 +5,7 @@ import styles from "@/styles/hiring/Hiring.module.css";
 
 export default function AboutHeroSection() {
   return (
-    <section className="relative w-full h-[80svh] lg:min-h-screen flex items-center rounded-b-3xl overflow-hidden">
+    <section className="pb-3 md:pb-6 lg:pb-[30px] relative w-full min-h-dvh md:min-h-screen flex items-center rounded-b-3xl overflow-hidden">
       <Image
         src="/images/about/aboutHero.webp"
         alt="About Us"
@@ -15,18 +15,18 @@ export default function AboutHeroSection() {
         className="object-cover object-center"
       />
 
-      <div className={styles.slideLayer}>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/0 z-10 rounded-b-3xl" />
+      <div className={`${styles.slideLayer}`}>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/0 z-10 rounded-b-3xl overflow-hidden" />
 
-        <div className="relative z-20 w-full max-w-6xl px-6 md:px-20 text-white">
+        <div className="w-full h-auto gap-6 relative max-w-6xl mx-0 z-20 px-6 md:px-20 text-white z-20">
           <h1 className="banner-heading ">
             About Us
           </h1>
 
-          <p className="mt-4 banner-content  leading-relaxed text-gray-200 max-w-5xl !font-roboto">
+          <p className=" banner-content mt-[8px] leading-relaxed text-gray-200 max-w-5xl !font-roboto">
             Connecting organizations with the right talent through structured recruitment solutions and industry-focused expertise. We support businesses in building strong teams that drive long-term growth and success.
           </p>
-          <button className="mt-6 relative subheading-content-space overflow-hidden bg-[var(--color-primary-hover)] lg:bg-transparent border-0  lg:border-white w-40 sm:w-44 md:w-48 lg:w-50 h-10 sm:h-11 md:h-12 flex items-end justify-center gap-2.5 rounded-lg lg:border-[1.5px] px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 text-white group hover:border-transparent transition-colors  cursor-pointer"
+          <button className="mt-10 relative subheading-content-space overflow-hidden bg-[var(--color-primary-hover)] lg:bg-transparent border-0  lg:border-white  flex items-end justify-center gap-2.5 rounded-lg lg:border-[1.5px] Common_btn text-white group hover:border-transparent transition-colors  cursor-pointer"
           >
             <Link
               href="/get-in-touch">

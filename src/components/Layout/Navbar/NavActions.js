@@ -46,7 +46,7 @@ export default function NavActions({
         <Link
           href="/get-in-touch"
           onClick={closeMenu}
-          className="nav-items mt-4 px-4 py-2 w-fit bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white rounded-md cursor-pointer"
+          className="nav-items Common_btn w-fit bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white rounded-md cursor-pointer"
           // className="mt-4 px-4 py-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white rounded-md cursor-pointer"
         >
           Get in touch
@@ -113,7 +113,7 @@ export default function NavActions({
       <Link
         href="/get-in-touch"
         onClick={closeMenu}
-        className="small-text px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 md:py-3 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white rounded-md whitespace-nowrap cursor-pointer"
+        className="Common_btn bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white rounded-md whitespace-nowrap cursor-pointer"
         // className="px-4 py-3 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white rounded-md whitespace-nowrap cursor-pointer"
       >
         Get in touch

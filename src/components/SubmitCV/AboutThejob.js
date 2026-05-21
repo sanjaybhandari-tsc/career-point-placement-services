@@ -51,7 +51,7 @@ export default function AboutTheJob() {
                     <button
                       onClick={() => setShowDetails(true)}
                       aria-expanded={showDetails}
-                      className="bg-[#039BE6] text-white px-5 py-3 rounded-lg text-sm  shadow-[0_4px_8px_#00000029] font-montserrat cursor-pointer"
+                      className="bg-[#039BE6]  text-white  rounded-lg Common_btn shadow-[0_4px_8px_#00000029] font-montserrat cursor-pointer"
                     >
                       View Details
                     </button>
