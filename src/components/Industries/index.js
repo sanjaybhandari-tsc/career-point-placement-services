@@ -1,8 +1,7 @@
 import HeroSection from "./HeroSection";
 import HeroText from "./HeroText";
-import IndustryCard from "@/components/Industries/IndustryCard";
-import IndustrySection from "@/components/Industries/IndustrySection";
 import IndustryCombined from "@/components/Industries/IndustryCombined";
+import CTASection from "./CTASection";
 
 import {
   ShieldCheck, // Regulatory Compliance
@@ -19,28 +18,28 @@ import {
   TrendingUp, // Sales & Market Operations
   BarChart3, // Consumer Market Insights
 } from "lucide-react";
-import { CogIcon  } from "@/components/icons/CogIcon";
-import { PulseIcon  } from "@/components/icons/PulseIcon";
+import { CogIcon } from "@/components/icons/CogIcon";
+import { PulseIcon } from "@/components/icons/PulseIcon";
 
 export default function Industries() {
   const iconClass = "w-8 h-8 md:w-9 md:h-9 lg:w-[42px] lg:h-[42px]";
   const pharmaSalesData = {
     title: "Pharmaceutical",
     description1:
-      "The pharmaceutical and healthcare sector plays a vital role in driving innovation, research, and public health advancement. With constant developments in medicine, technology, and regulatory standards, organizations require skilled professionals who understand this highly regulated and fast-evolving environment.",
+      "The pharmaceutical and healthcare sector plays a vital role in driving innovation, research, and public health advancement. With constant developments in medicine, technology, and regulatory standards, organizations require professionals who understand the industry’s dynamic and highly regulated environment.",
     description2:
-      "We provide pharmaceutical recruitment and staffing solutions, helping companies hire experienced professionals in sales, regulatory compliance, and healthcare operations. Our focus is on building strong teams that maintain quality standards, support innovation, and drive long-term growth across the healthcare ecosystem.",
+      "We support pharmaceutical companies in building capable teams by connecting them with professionals who bring the right expertise, adaptability, and understanding of evolving industry demands. Our focus is on helping organizations strengthen their workforce so they can maintain quality standards, support innovation, and contribute to long-term growth within the healthcare ecosystem.",
     imageSrc: "/images/industries/pharmaceuticalSales.png",
     imageAlt: "Pharmaceutical recruitment and sales professionals",
     imagePosition: "left",
   };
 
   const pharmaManufacturingData = {
-    title: "Pharma Manufacturing",
+    title: "Manufacturing",
     description1:
-      "The pharmaceutical manufacturing sector plays a critical role in industrial growth, requiring skilled professionals who understand production processes, quality control, and evolving manufacturing technologies. Organizations in this space depend on efficient teams to maintain productivity and meet strict regulatory standards.",
+      "The manufacturing sector forms the backbone of industrial growth, requiring skilled professionals who understand production processes, operational efficiency, and evolving technological advancements. Organizations in this sector depend on capable teams that can maintain productivity, ensure quality standards, and adapt to modern manufacturing practices.",
     description2:
-      "We provide pharma manufacturing recruitment and staffing solutions, helping companies hire experienced professionals in production, operations, and industrial technology. Our focus is on strengthening manufacturing teams to ensure consistent quality, operational efficiency, and long-term business growth.",
+      "We support manufacturing companies by connecting them with professionals who bring the right technical knowledge and practical experience, helping businesses strengthen their operations and achieve sustainable growth.",
     imageSrc: "/images/industries/pharmaManufacturing.png",
     imageAlt: "Pharma manufacturing recruitment",
     imagePosition: "right",
@@ -49,9 +48,9 @@ export default function Industries() {
   const buildingMaterialsData = {
     title: "Building Materials Industry",
     description1:
-      "The building materials industry plays a key role in infrastructure development and construction growth. Companies in this sector require skilled professionals who understand production processes, supply chain networks, and evolving market demands in a competitive environment.",
+      "The building materials sector plays a significant role in supporting infrastructure development and construction growth. Companies in this industry rely on professionals who understand production processes, supply networks, and evolving market demands within a competitive and fast-moving environment.",
     description2:
-      "We provide recruitment and staffing solutions for the building materials industry, helping organizations hire experienced professionals in production management, supply chain, and distribution operations. Our focus is on building strong teams that support efficiency, quality, and long-term business growth.",
+      "We support organizations in the building materials space by connecting them with professionals who bring industry awareness, operational understanding, and the ability to contribute to efficient production, supply chain management, and distribution systems that support consistent business growth.",
     imageSrc: "/images/industries/buildingMaterialsIndustry.png",
     imageAlt:
       "Building materials recruitment and construction industry workforce",
@@ -61,9 +60,9 @@ export default function Industries() {
   const bfsiData = {
     title: "The Banking, Financial Services & Insurance (BFSI)",
     description1:
-      "The Banking, Financial Services, and Insurance (BFSI) sector plays a vital role in supporting economic growth and financial stability. Organizations in this industry require skilled professionals who understand financial systems, regulatory frameworks, and evolving customer expectations in a rapidly changing market.",
+      "The BFSI sector plays a vital role in supporting economic growth and financial stability. Organizations in this industry require professionals who understand financial systems, regulatory environments, and evolving customer expectations within a rapidly changing market landscape.",
     description2:
-      "We provide BFSI recruitment and staffing solutions, helping banks, financial institutions, and insurance companies hire experienced professionals in financial operations, risk management, compliance, and digital banking services. Our focus is on building strong teams that drive efficiency, governance, and long-term growth.",
+      "We support banks, financial institutions, and insurance organizations by connecting them with professionals who bring analytical expertise, industry awareness, and the ability to contribute to efficient operations, risk management, and long-term organizational growth.",
     imageSrc: "/images/industries/bfsi.webp",
     imageAlt:
       "BFSI recruitment banking financial services insurance professionals",
@@ -73,9 +72,9 @@ export default function Industries() {
   const fmcgData = {
     title: "Fast Moving Consumer Goods (FMCG)",
     description1:
-      "The Fast Moving Consumer Goods (FMCG) sector operates in a fast-paced and highly competitive environment where efficiency, strong distribution networks, and market understanding are critical. Companies in this industry require skilled professionals who can respond quickly to changing consumer demands and evolving retail trends.",
+      "The FMCG sector operates in a fast-paced and highly competitive environment where efficiency, strong distribution networks, and market understanding play a crucial role. Companies in this industry require professionals who can respond quickly to changing consumer demands, shifting market trends, and evolving retail landscapes.",
     description2:
-      "We provide FMCG recruitment and staffing solutions, helping organizations hire experienced professionals in sales, supply chain management, and distribution operations. Our focus is on building high-performing teams that drive sales growth, optimize product movement, and improve overall business performance across competitive consumer markets.",
+      "We support FMCG organizations by connecting them with professionals who bring industry awareness, operational understanding, and the ability to contribute to sales growth, supply chain efficiency, product movement, and overall business performance across competitive consumer markets.",
     imageSrc: "/images/industries/fast-moving-consumer-goods.webp",
     imageAlt:
       "FMCG recruitment and consumer goods industry workforce distribution",
@@ -86,19 +85,19 @@ export default function Industries() {
     {
       title: "Regulatory Compliance",
       description:
-        "Professionals experienced in pharmaceutical regulatory compliance, quality standards, and production processes.",
+        "Professionals familiar with pharmaceutical regulations, compliance standards, and quality control processes across production and operations.",
       icon: <ShieldCheck className={iconClass} strokeWidth={1.5} />,
     },
     {
       title: "Research & Innovation",
       description:
-        "Talent supporting pharmaceutical research, product development, and healthcare innovation.",
+        "Talent supporting research, product development, and innovation within evolving pharmaceutical and healthcare environments.",
       icon: <FlaskConical className={iconClass} strokeWidth={1.5} />,
     },
     {
       title: "Quality & Safety Standards",
       description:
-        "Experts focused on pharmaceutical quality control, safety protocols, and regulatory guidelines.",
+        "Experts focused on maintaining strict quality standards, safety protocols, and regulatory guidelines in pharmaceutical operations.",
       icon: <PulseIcon className={iconClass} strokeWidth={1.5} />,
     },
   ];
@@ -107,21 +106,20 @@ export default function Industries() {
     {
       title: "Production & Operations",
       description:
-        "Professionals experienced in managing production workflows, manufacturing operations, and industrial efficiency.",
-      icon: <CogIcon className={iconClass} strokeWidth={1.5} />
-
+        "Professionals experienced in managing production workflows, operational processes, and manufacturing efficiency.",
+      icon: <CogIcon className={iconClass} strokeWidth={1.5} />,
     },
     {
       title: "Quality Management",
       description:
-        "Ensuring consistent product quality through strict standards, inspections, and process control systems.",
-      icon: <BadgeCheck className={iconClass} strokeWidth={1.5} /> 
+        "Ensuring consistent product quality through strong standards, inspections, and effective process monitoring.",
+      icon: <BadgeCheck className={iconClass} strokeWidth={1.5} />,
     },
     {
       title: "Industrial Technology",
       description:
-        "Talent skilled in modern manufacturing technologies, automation systems, and industrial engineering tools.",
-      icon: <Building2 className={iconClass} strokeWidth={1.5} />
+        "Talent familiar with modern manufacturing tools, automation systems, and evolving industrial technologies.",
+      icon: <Building2 className={iconClass} strokeWidth={1.5} />,
     },
   ];
 
@@ -129,70 +127,64 @@ export default function Industries() {
     {
       title: "Production Management",
       description:
-        "Professionals experienced in managing production activities, manufacturing workflows, and operational efficiency in the building materials industry.",
+        "Professionals experienced in managing production activities and ensuring efficient manufacturing operations.",
       icon: <Building2 className={iconClass} strokeWidth={1.5} />,
-
     },
     {
       title: "Supply Chain & Distribution",
       description:
-        "Talent skilled in supply chain management, logistics operations, and distribution systems across building materials and construction markets.",
+        "Talent skilled in managing supply networks, logistics operations, and ensuring smooth distribution efficiency across markets.",
       icon: <Truck className={iconClass} strokeWidth={1.5} />,
-    
     },
     {
       title: "Quality & Process Standards",
       description:
-        "Experts ensuring consistent product quality through structured processes, inspections, and operational standards in the construction materials sector.",
+        "Ensuring consistent product quality through structured processes, inspections, and operational standards. ",
       icon: <BadgeCheck className={iconClass} strokeWidth={1.5} />,
-
     },
   ];
-  
+
   const BankingFinancialServicesInsuranceCardData = [
     {
       title: "Financial Operations",
       description:
-      "Professionals experienced in banking financial operations, transactions, and structured financial systems management.",
+        "Professionals experienced in managing financial operations, transactions, and structured banking processes.",
       icon: <Landmark className={iconClass} strokeWidth={1.5} />,
-
     },
     {
       title: "Risk & Compliance",
       description:
-      "Experts in banking risk management, regulatory compliance, and financial governance frameworks.",
+        "Experts focused on regulatory compliance, financial risk monitoring, and operational governance.",
       icon: <FileSearch className={iconClass} strokeWidth={1.5} />,
-
     },
     {
       title: "Customer & Digital Services",
       description:
-      "Talent supporting digital banking platforms, customer service operations, and fintech-driven financial services.",
+        "Talent supporting customer services, financial platforms, and evolving digital banking systems and experiences.",
       icon: <Users className={iconClass} strokeWidth={1.5} />,
     },
   ];
-  
+
   const FastMovingConsumerGoodsCardData = [
     {
       title: "Sales & Market Operations",
       description:
-      "Professionals experienced in FMCG sales operations, market expansion, and consumer-driven business growth.",
+        "Professionals experienced in managing sales activities, market presence, and business expansion.",
       icon: <TrendingUp className={iconClass} strokeWidth={1.5} />,
     },
     {
       title: "Supply Chain Management",
       description:
-      "Talent skilled in FMCG supply chain management, product distribution, and logistics coordination across retail networks.",
+        "Talent skilled in handling product movement, distribution systems, and supply chain coordination.",
       icon: <Truck className={iconClass} strokeWidth={1.5} />,
     },
     {
       title: "Consumer Market Insights",
       description:
-      "Experts analyzing FMCG consumer behavior, market trends, and product demand forecasting.",
+        "Experts focused on understanding consumer behavior, market trends, and product demand analysis.",
       icon: <BarChart3 className={iconClass} strokeWidth={1.5} />,
     },
   ];
-  
 
   return (
     <>
@@ -223,6 +215,8 @@ export default function Industries() {
         data={fmcgData}
         cards={FastMovingConsumerGoodsCardData}
       />
+      <CTASection />
+      <HeroText />
     </>
   );
 }

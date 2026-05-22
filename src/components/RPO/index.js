@@ -42,7 +42,7 @@ export default function RPO() {
     {
       heading: "Dedicated Recruitment Team",
       desc: "A focused recruitment team works closely with the client to manage ongoing hiring requirements.",
-      img: "/icons/rpa/Dedicated Recruitment Team.svg",
+      img: "/images/permanentHiring/shield-check.svg",
     },
     {
       heading: "Structured Hiring Management",
@@ -52,7 +52,7 @@ export default function RPO() {
     {
       heading: "Recruitment Insights & Reporting",
       desc: "Regular hiring updates, recruitment trackers, and analytics help maintain transparency throughout the process.",
-      img: "/icons/rpa/Recruitment Insights & Reporting.svg",
+      img: "/images/permanentHiring/activity-square.svg",
     },
   ];1
   const hiringData = [
@@ -61,8 +61,8 @@ export default function RPO() {
       image: "/images/rpa/Managed Hiring Solutions.png",
       objectPosition: "center top",
       description: [
-        "   Recruitment Process Outsourcing (RPO) allows organizations to delegate part or the entire recruitment function to a dedicated recruitment partner. This approach helps companies streamline hiring activities while improving efficiency and consistency.",
-        "     Our RPO solutions provide organizations with a structured recruitment process supported by a dedicated hiring team. From sourcing and screening candidates to managing interviews, offer rollouts, and reporting, we ensure a smooth and organized recruitment workflow.",
+        "Recruitment Process Outsourcing (RPO) allows organizations to delegate part or the entire recruitment function to a dedicated recruitment partner. This approach helps companies streamline hiring activities while improving efficiency and consistency.",
+        "Our RPO solutions provide organizations with a structured recruitment process supported by a dedicated hiring team. From sourcing and screening candidates to managing interviews, offer rollouts, and reporting, we ensure a smooth and organized recruitment workflow.",
       ],
     },
   ];

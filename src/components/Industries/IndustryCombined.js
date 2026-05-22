@@ -77,10 +77,10 @@ export default function IndustryCombined({ data, cards }) {
           <div className="pb-8 sm:px-10 md:px-8 lg:px-0">
             {/* Ellipse glow */}
             <div
-              className="hidden lg:block absolute bottom-[2%] left-1/2 -translate-x-1/2 w-full h-[160px] rounded-[50%] z-0 pointer-events-none"
+              className="hidden lg:block absolute bottom-[2%] left-1/2 -translate-x-1/2 w-full h-[120px] rounded-[50%] z-0 pointer-events-none"
               style={{
                 background:
-                  "radial-gradient(ellipse at center, #039BE6 7%, #ffffff 100%)",
+                  "radial-gradient(ellipse at center, #039BE6 2%, #ffffff 100%)",
                 filter: "blur(18px) saturate(100%)",
                 opacity: 0.12,
               }}

@@ -36,7 +36,7 @@ export default function CandidateNetworkSection() {
   return (
     <section className="px-4 md:px-14 lg:px-[100px] pb-6 md:pb-[30px] lg:pb-[60px] pt-12 md:pt-[60px] lg:pt-[120px]">
       <div className="max-w-6xl mx-auto text-center px-2 sm:px-4 lg:px-6 pb-10 sm:pb-12 lg:pb-14">
-        {/* <h2 className="heading"> */}
+        
         <h2 className="main-heading">
           Our Talent{" "}
           <span className="text-[var(--color-primary)]">Sourcing Strategy</span>
@@ -66,10 +66,7 @@ export default function CandidateNetworkSection() {
                   />
                 </div>
                 <div className="w-full lg:w-1/2 py-4 px-7 lg:p-12 flex flex-col justify-center gap-4 md:gap-5 lg:gap-10">
-                  {/* <p className="hero-heading !font-bold">{work.srNo}</p> */}
                   <div className="flex flex-col gap-2.5">
-                    {/* <p className="main-heading">{work.srNo}</p> */}
-                    {/* <h3 className="heading font-semibold lg:mt-4">{work.heading}</h3> */}
                     <h3 className="main-heading font-semibold lg:mt-4">
                       {work.heading}
                     </h3>
@@ -87,7 +84,6 @@ export default function CandidateNetworkSection() {
                 bg-[#0B2239] text-white flex flex-col lg:flex-row
               "
               >
-                {/* Image on top for mobile/tablet */}
                 <div className="relative w-full h-[220px] md:h-[300px] lg:hidden">
                   <Image
                     src={work.img}
@@ -98,7 +94,6 @@ export default function CandidateNetworkSection() {
                   />
                 </div>
                 <div className="w-full lg:w-1/2 py-4 px-7 lg:p-12 flex flex-col justify-center gap-4 md:gap-5 lg:gap-10">
-                  {/* <p className="hero-heading !font-bold">{work.srNo}</p> */}
                   <div className="flex flex-col gap-2.5">
                     <h3 className="main-heading font-semibold lg:mt-4">
                       {work.heading}
@@ -106,7 +101,6 @@ export default function CandidateNetworkSection() {
                     <p className="main-subheading">{work.desc}</p>
                   </div>
                 </div>
-                {/* Image on right for desktop */}
                 <div className="relative hidden lg:block lg:w-1/2">
                   <Image
                     src={work.img}

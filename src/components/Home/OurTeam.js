@@ -81,7 +81,7 @@ function OurTeam() {
       img: "/images/homepage/Amruta.svg",
       name: "Amruta Salunke",
       department: "Business Partner -Pharma ",
-      desc: "9+ Years in Pharma Hiring",
+      desc: "8+ Years in Pharma Hiring",
       LinkedIn:
         " https://www.linkedin.com/in/amruta-salunke-ba60133a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app  ",
       FB: " https://www.facebook.com/profile.php?id=100049265576323 ",

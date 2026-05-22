@@ -3,7 +3,7 @@ export default function TestimonialCard({ name, role, image, text }) {
     <div
       className="
         relative
-        bg-white/10
+        bg-white/65
         rounded-2xl
         pt-16 pb-10 px-8 mt-16
         text-center

@@ -166,13 +166,14 @@ export default function TestimonialSection() {
       className="py-6 md:py-[30px] lg:py-[60px] relative"
     >
       <div
-    className="hidden lg:block absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-full h-[150px] rounded-[50%] z-10 pointer-events-none"
-    style={{
-      background: "radial-gradient(ellipse at center, #039BE6 7%, #ffffff 100%)",
-      filter: "blur(18px) saturate(100%)",
-      opacity: 0.12,
-    }}
-  />
+        className="hidden lg:block absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-full h-[150px] rounded-[50%] z-10 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, #039BE6 7%, #ffffff 100%)",
+          filter: "blur(18px) saturate(100%)",
+          opacity: 0.12,
+        }}
+      />
 
       <div className="max-w-7xl mx-auto px-6">
         <div
@@ -185,50 +186,34 @@ export default function TestimonialSection() {
           <h2 className="main-heading leading-none text-center mb-2 md:mb-3 lg:mb-4">
             Voices of Success
           </h2>
-          {/* <h2 className="font-montserrat font-semibold text-2xl sm:text-3xl lg:text-[36px] leading-none text-center">
-            Voices of Success
-          </h2> */}
 
           <p className="main-subheading mb-6 md:mb-12 lg:mb-[60px]">
             Real experiences from candidates and companies who benefited from
             our recruitment, staffing, and hiring solutions.
           </p>
-          {/* <p className="font-roboto font-normal text-base sm:text-lg leading-relaxed text-center mt-3">
-            Real experiences from candidates and companies who benefited from
-            our recruitment, staffing, and hiring solutions.
-          </p> */}
         </div>
       </div>
 
-      <div
-        className={`
+      <div className="overflow-x-hidden w-full">
+        <div
+          className={`
        overflow-x-hidden mx-auto transform transition-all duration-700 ease-out relative z-30
       ${show ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"}
     `}
-      >
-        {/* <div
-          ref={scrollRef}
-  className="
-    flex gap-4 sm:gap-6 lg:gap-8
-    overflow-x-auto
-    no-scrollbar
-    snap-x snap-mandatory
-    scroll-smooth
-  "
-        > */}
-        <div
-          ref={scrollRef}
-          className="flex items-stretch gap-4 sm:gap-6 lg:gap-8 overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth"
         >
-          {testimonials.map((item) => (
-            <div
-              key={item.id}
-              // className="snap-center flex-shrink-0 first:pl-4 first:md:pl-14 first:lg:pl-[100px] last:pr-4"
-              className="snap-center flex-shrink-0 first:pl-4 first:md:pl-14 first:lg:pl-[100px] last:pr-4 h-full self-stretch"
-            >
-              <TestimonialCard {...item} />
-            </div>
-          ))}
+          <div
+            ref={scrollRef}
+            className="flex items-stretch gap-4 sm:gap-6 lg:gap-8 overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth"
+          >
+            {testimonials.map((item) => (
+              <div
+                key={item.id}
+                className="snap-center flex-shrink-0 first:pl-4 first:md:pl-14 first:lg:pl-[100px] last:pr-4 h-full self-stretch"
+              >
+                <TestimonialCard {...item} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -16,27 +16,27 @@ export default function ContractHiring() {
     {
       srNo: "01",
       heading: "Requirement Understanding",
-      desc: "We begin by understanding the job role, required skills, experience level, and organizational expectations",
+      desc: "We begin by understanding the project scope, duration, and the specific skills required for the contract role.",
     },
     {
       srNo: "02",
-      heading: "Talent Sourcing",
-      desc: "Candidates are sourced through our database, professional networks, and trusted recruitment platforms.",
+      heading: "Candidate Sourcing",
+      desc: "Suitable professionals are identified through our internal database and external market sources.",
     },
     {
       srNo: "03",
-      heading: "Screening & Shortlisting",
-      desc: "Profiles are carefully reviewed and shortlisted based on qualifications, experience, and role suitability.",
+      heading: "Screening & Evaluation",
+      desc: "Candidates are screened to assess technical suitability, experience, and overall role compatibility.",
     },
     {
       srNo: "04",
-      heading: "Interview Coordination",
-      desc: "We coordinate interviews between the client and selected candidates and manage feedback efficiently.",
+      heading: "Client Review & Interviews",
+      desc: "Shortlisted candidates are shared with the client and interviews are coordinated for final evaluation.",
     },
     {
       srNo: "05",
-      heading: "Offer & Onboarding Support",
-      desc: "Our team assists with offer",
+      heading: "Contract & Deployment",
+      desc: "OurOnce selected, we manage employment documentation while the professional begins working at the client location.",
     },
   ];
   const reasons = [
@@ -62,8 +62,8 @@ export default function ContractHiring() {
       image: "/images/contractHiring/Project-Based Talent Hiring.png",
       objectPosition: "center top",
       description: [
-        "  Contract staffing enables organizations to hire skilled professionals for specific projects, temporary assignments, or short-term business needs without expanding their permanent workforce. It offers flexibility while ensuring that the right expertise is available when required.",
-        "   Our contract staffing solutions help companies quickly access qualified professionals who can contribute to ongoing operations or specialized projects. From sourcing and screening candidates to managing employment documentation and administrative responsibilities, we ensure a smooth and reliable staffing process.",
+        "Contract staffing enables organizations to hire skilled professionals for specific projects, temporary assignments, or short-term business needs without expanding their permanent workforce. It offers flexibility while ensuring that the right expertise is available when required.",
+        "Our contract staffing solutions help companies quickly access qualified professionals who can contribute to ongoing operations or specialized projects. From sourcing and screening candidates to managing employment documentation and administrative responsibilities, we ensure a smooth and reliable staffing process.",
       ],
     },
   ];

@@ -2,10 +2,10 @@ import Image from "next/image";
 import { useState, useEffect, useMemo } from "react";
 
 function useScreenSize() {
-  const [screenWidth, setScreenWidth] = useState(0); // ✅ 0 avoids SSR mismatch
+  const [screenWidth, setScreenWidth] = useState(0); 
 
   useEffect(() => {
-    setScreenWidth(window.innerWidth); // ✅ set on client only
+    setScreenWidth(window.innerWidth); 
     const handler = () => setScreenWidth(window.innerWidth);
     window.addEventListener("resize", handler);
     return () => window.removeEventListener("resize", handler);
@@ -27,20 +27,20 @@ export default function WeConnect() {
     <section className="px-4 md:px-14 lg:px-[100px] py-6 md:py-[30px] lg:py-[60px] w-full bg-white">
       <div className="flex items-start ">
         {" "}
-        {/* ✅ gap scales */}
-        {screenWidth > 0 && ( // ✅ prevent SSR flash with wrong size
+
+        {screenWidth > 0 && ( 
           <Image
             src="/images/about/quote.svg"
             alt="Quotation icon"
             width={iconSize}
             height={iconSize}
-            className="object-contain flex-shrink-0 -mt-1 md:-mt-1.5 lg:-mt-2" // ✅ scaled mt
+            className="object-contain flex-shrink-0 -mt-1 md:-mt-1.5 lg:-mt-2" 
           />
         )}
         <h2 className=" independent-text">
-          We <span className="text-[#0277BD]">connect</span>
+          We <span className="text-[#0277BD]">connect </span>
           organizations with professionals who align with their
-          <span className="text-[#0277BD]">goals</span> to connecting and
+          <span className="text-[#0277BD]"> goals</span> and
           culture.
         </h2>
       </div>
