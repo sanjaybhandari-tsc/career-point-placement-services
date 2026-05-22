@@ -14,7 +14,7 @@ export default function ExecutiveSearch() {
   const workData = [
     {
       srNo: "01",
-      heading: "Leadership Discussion",
+      heading: "Leadership Requirement Discussion",
       desc: "We begin with detailed discussions to understand the leadership expectations, responsibilities, and strategic importance of the role.",
     },
     {
@@ -41,18 +41,18 @@ export default function ExecutiveSearch() {
   const reasons = [
     {
       heading: "Leadership Talent Identification",
-      desc: "We specialize in identifying senior leaders, CXOs, and experienced professionals with strong leadership capabilities & industry expertise.",
-      img: "/icons/executivesearch/Leadership Talent Identification.svg",
+      desc: "We focus on identifying experienced professionals with strong leadership capabilities and industry expertise.",
+      img: "/images/permanentHiring/shield-check.svg",
     },
     {
-      heading: "Confidential Executive Search Approach",
-      desc: "Our executive search process ensures complete confidentiality and professionalism in senior-level recruitment and leadership hiring.",
+      heading: "Confidential Search Approach",
+      desc: "Senior-level recruitment is handled with complete discretion and professionalism.",
       img: "/icons/executivesearch/Confidential Search Approach.svg",
     },
     {
       heading: "Strategic Talent Evaluation",
-      desc: "Candidates undergo structured screening, leadership assessment, and background evaluation to ensure the right executive fit for your organization.",
-      img: "/icons/executivesearch/Strategic Talent Evaluation.svg",
+      desc: "Candidates are assessed through detailed screening and background evaluation to ensure the right leadership fit.",
+      img: "/images/permanentHiring/activity-square.svg",
     },
   ];
   const hiringData = [

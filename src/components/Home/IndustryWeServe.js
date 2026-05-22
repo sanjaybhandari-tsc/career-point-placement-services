@@ -23,14 +23,14 @@ function IndustryWeServe() {
     },
     {
       src: "/images/homepage/Industry4.webp",
-      alt: "Building Material",
-      label: "Building Material",
+      alt: "FMCG",
+      label: "FMCG",
       className: "col-span-1 row-span-1",
     },
     {
       src: "/images/homepage/Industry5.webp",
-      alt: "FMCG",
-      label: "FMCG",
+      alt: "Building Material",
+      label: "Building Material",
       className:
         "col-span-2 row-span-1 rounded-br-[80px] md:rounded-br-[150px]",
     },

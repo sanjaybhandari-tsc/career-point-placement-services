@@ -3,6 +3,36 @@ import React, { useRef, useEffect } from "react";
 
 function HeaderPart({ headingText }) {
   return (
+    <header
+      className="h-[56px] md:h-[80px] lg:h-[120px] relative flex justify-center items-center bg-gradient-to-b from-[#0277BD] to-[#0E6497] md:py-12 py-10 mb-[28px]   md:mb-[40px] lg:mb-[60px] rounded-b-2xl overflow-hidden" aria-label={`${headingText}`}>
+      <img
+        className="absolute  lg:top-0 lg:left-0  md:top-0 md:left-0 -top-10 -left-5 "
+        src="/images/permanentHiring/permanentTop1.svg"
+        aria-hidden="true"
+      />
+      <img
+        className="absolute  lg:top-0 lg:left-0  md:top-0 md:left-0 -top-10 -left-5 "
+        src="/images/permanentHiring/permanentTop2.svg"
+        aria-hidden="true"
+      />
+
+      <img
+        className="absolute lg:top-0 lg:right-0 md:top-0 md:right-0  -top-10 -right-5"
+        src="/images/permanentHiring/permanentTop3.svg"
+        aria-hidden="true"
+      />
+      <img
+        className="absolute lg:top-0 lg:right-0 md:top-0 md:right-0  -top-10 -right-5"
+        src="/images/permanentHiring/permanentTop4.svg"
+        aria-hidden="true"
+      />
+      <h2 className="heading-bold text-white">{headingText}</h2>
+    </header>
+  );
+}
+
+export default HeaderPart;
+
     // <div className="relative flex justify-center items-center bg-gradient-to-b from-[#0277BD] to-[#0E6497] py-12 lg:py-22 rounded-b-2xl overflow-hidden">
     //   <img
     //     className="absolute  lg:top-0 lg:left-0  md:top-0 md:left-0 -top-10 -left-5 "
@@ -76,34 +106,3 @@ function HeaderPart({ headingText }) {
 
     //   </section>
     // </header>
-    <header
-      className="mb-6.5 md:mb-10 lg:mb-15 h-[56px] md:h-[80px] lg:h-[120px] relative flex justify-center items-center bg-gradient-to-b from-[#0277BD] to-[#0E6497] rounded-b-2xl overflow-hidden"
-      aria-label="Submit CV header"
-    >
-      <img
-        className="absolute  lg:top-0 lg:left-0  md:top-0 md:left-0 -top-10 -left-5 "
-        src="/images/permanentHiring/permanentTop1.svg"
-        aria-hidden="true"
-      />
-      <img
-        className="absolute  lg:top-0 lg:left-0  md:top-0 md:left-0 -top-10 -left-5 "
-        src="/images/permanentHiring/permanentTop2.svg"
-        aria-hidden="true"
-      />
-
-      <img
-        className="absolute lg:top-0 lg:right-0 md:top-0 md:right-0  -top-10 -right-5"
-        src="/images/permanentHiring/permanentTop3.svg"
-        aria-hidden="true"
-      />
-      <img
-        className="absolute lg:top-0 lg:right-0 md:top-0 md:right-0  -top-10 -right-5"
-        src="/images/permanentHiring/permanentTop4.svg"
-        aria-hidden="true"
-      />
-      <h2 className="heading-bold text-white">{headingText}</h2>
-    </header>
-  );
-}
-
-export default HeaderPart;

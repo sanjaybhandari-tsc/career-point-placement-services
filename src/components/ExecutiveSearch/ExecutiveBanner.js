@@ -33,6 +33,3 @@ export default function ExecutiveBanner() {
 }
 
 
-{/* <h2 className="font-montserrat font-bold text-3xl sm:text-4xl lg:text-[48px] leading-none lg:text-5xl text-white">
-  Executive Search
-</h2> */}

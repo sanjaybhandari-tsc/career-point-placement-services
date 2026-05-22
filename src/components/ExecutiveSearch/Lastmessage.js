@@ -35,11 +35,10 @@ export default function Lastmessage() {
           className="object-cover flex-shrink-0 -mt-1"
         />
         <h2 className="independent-text">
-          We
-          <span className="independent-text text-[#0277BD]"> support</span>,
-          organizations streamline hiring while building
-          <span className="independent-text text-[#0277BD]"> strong</span> and
-          capable team.
+          We help
+          <span className="independent-text text-[#0277BD]"> organizations </span> identify experienced          
+          <span className="independent-text text-[#0277BD]"> leaders</span> who bring strong vision and industry 
+          <span className="independent-text text-[#0277BD]"> expertise</span>.
         </h2>
       </div>
     </section>

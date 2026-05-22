@@ -7,7 +7,7 @@ export default function HeroSection() {
     { value: "95%", label: "Success Rate" },
     { value: "50+", label: "Global Clients" },
     { value: "15K+", label: "Placements" },
-    { value: "48hrs", label: "Total Match" },
+    { value: "48hrs", label: "Talent Match" },
   ];
   return (
     <>

@@ -10,7 +10,7 @@ const links = [
     dropdown: true,
     children: [
       { label: "Permanent Hiring", href: "/services/permanent-hirings" },
-      { label: "Contract Hiring", href: "/services/contract-hiring" },
+      { label: "Contract Staffing", href: "/services/contract-hiring" },
       { label: "Executive Search", href: "/services/executive-search" },
       { label: "RPO", href: "/services/rpo" },
     ],

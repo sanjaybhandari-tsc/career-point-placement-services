@@ -17,7 +17,7 @@ The platform is built with a strong focus on usability, scalability, and clean U
 * Job browsing with category-based filtering (Pharmaceutical, FMCG, BFSI, etc.)
 * CV/Resume submission with form validation
 * Detailed job pages (skills, responsibilities, location, experience)
-* Hiring solutions pages (Contract Hiring, Executive Search, Permanent Hiring, RPO)
+* Hiring solutions pages (Contract Staffing, Executive Search, Permanent Hiring, RPO)
 * Industry-specific sections with icons and structured content
 * Fully responsive design (mobile, tablet, desktop)
 * Contact forms and social media integration

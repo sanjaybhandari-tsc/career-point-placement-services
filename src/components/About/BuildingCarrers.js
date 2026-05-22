@@ -53,7 +53,7 @@ export default function BuildingCarrers() {
           </p>
 
           <p className="main-content  !font-roboto ">
-            Over the years, we have placed more than 15,000 candidates across India, supporting hiring from junior to senior leadership roles with compensation ranging from 3 LPA to 2 CR.
+            Over the years, we have placed more than 15,000 candidates across India, supporting hiring from junior to senior leadership roles with compensation ranging from 3 LPA to 2 CR. Our extensive candidate database and experienced recruitment team enable us to deliver reliable talent solutions across Pharmaceutical, Manufacturing, Building Materials, BFSI, and FMCG sectors.
           </p>
 
           <p className="main-content  !font-roboto">
