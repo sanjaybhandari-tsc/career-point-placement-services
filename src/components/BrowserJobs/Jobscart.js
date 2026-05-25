@@ -346,7 +346,15 @@ export default function Jobscart() {
                 Overview
               </h4>
               <div
-                className="small-text leading-[165%] ps-2 sm:ps-4 !font-inter prose max-w-none"
+                className="
+                  [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:my-2
+                  [&_ol]:list-decimal [&_ol]:pl-6
+                  [&_li]:my-1
+                  [&_p]:my-1
+                  [&_h2]:text-lg [&_h2]:font-semibold [&_h2]:mt-4
+                  [&_h3]:text-base [&_h3]:font-semibold [&_h3]:mt-3
+                  [&_strong]:font-semibold
+                  prose-sm !font-inter leading-[165%]"
                 dangerouslySetInnerHTML={{ __html: selectedJob.description }}
               />
             </div>
@@ -357,7 +365,15 @@ export default function Jobscart() {
                 Qualification Criteria
               </h4>
               <div
-                className="small-text leading-[165%] ps-2 sm:ps-4 !font-inter prose max-w-none"
+                className="
+                  [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:my-2
+                  [&_ol]:list-decimal [&_ol]:pl-6
+                  [&_li]:my-1
+                  [&_p]:my-1
+                  [&_h2]:text-lg [&_h2]:font-semibold [&_h2]:mt-4
+                  [&_h3]:text-base [&_h3]:font-semibold [&_h3]:mt-3
+                  [&_strong]:font-semibold
+                  prose-sm !font-inter leading-[165%]"
                 dangerouslySetInnerHTML={{
                   __html: selectedJob.qualificationCriteria,
                 }}
