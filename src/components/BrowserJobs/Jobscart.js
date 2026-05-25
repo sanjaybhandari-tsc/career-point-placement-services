@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 export default function Jobscart() {
   const router = useRouter();
-  const [jobsData, setJobsData] = useState([]);   
+  const [jobsData, setJobsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -25,7 +25,10 @@ export default function Jobscart() {
   const scrollToDetails = () => {
     if (window.innerWidth < 1024) {
       setTimeout(() => {
-        detailsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+        detailsRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
       }, 100);
     }
   };
@@ -36,7 +39,8 @@ export default function Jobscart() {
   };
 
   const handlePrevPage = () => setCurrentPage((p) => Math.max(p - 1, 1));
-  const handleNextPage = () => setCurrentPage((p) => Math.min(p + 1, totalPages));
+  const handleNextPage = () =>
+    setCurrentPage((p) => Math.min(p + 1, totalPages));
   const handlePageClick = (page) => setCurrentPage(page);
 
   const handleApply = (job) => {
@@ -44,16 +48,16 @@ export default function Jobscart() {
     router.push("/jobs/submit-your-cv");
   };
 
-
   useEffect(() => {
     const fetchJobs = async () => {
       try {
         const response = await fetch(
           "https://dev.collectivhire.com/api/ats/jobs/client/jobs?api_key=CPPSe0d9c8b7a6f5e4d3c2b1a9f8a7c6d4b322052026",
-          { method: "GET", headers: { "Content-Type": "application/json" } }
+          { method: "GET", headers: { "Content-Type": "application/json" } },
         );
 
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        if (!response.ok)
+          throw new Error(`HTTP error! status: ${response.status}`);
 
         const result = await response.json();
 
@@ -64,10 +68,12 @@ export default function Jobscart() {
             job.min_experience != null && job.max_experience != null
               ? `${job.min_experience}-${job.max_experience} yrs`
               : job.max_experience != null
-              ? `Up to ${job.max_experience} yrs`
-              : "Not specified",
+                ? `Up to ${job.max_experience} yrs`
+                : "Not specified",
           location:
-            job.location?.length > 0 ? job.location.join(", ") : "Remote / Not specified",
+            job.location?.length > 0
+              ? job.location.join(", ")
+              : "Remote / Not specified",
           time: job.published_at
             ? new Date(job.published_at).toLocaleDateString("en-IN", {
                 day: "numeric",
@@ -75,13 +81,15 @@ export default function Jobscart() {
                 year: "numeric",
               })
             : "Recently posted",
-          //Displaying raw HTML via dangerouslySetInnerHTML 
+          //Displaying raw HTML via dangerouslySetInnerHTML
           description: job.job_description || "",
           qualificationCriteria: job.qualification_criteria || "",
-          responsibilities: [], 
+          responsibilities: [],
           role: job.job_role || "Not specified",
           industry: job.business_vertical || "Not specified",
-          employmentType: [job.job_type, job.job_mode].filter(Boolean).join(", "),
+          employmentType: [job.job_type, job.job_mode]
+            .filter(Boolean)
+            .join(", "),
           skills: [...(job.primary_skills || []), ...(job.key_skills || [])],
           jobID: job.job_ID,
           openings: job.number_of_opening,
@@ -111,7 +119,6 @@ export default function Jobscart() {
     return () => clearTimeout(t);
   }, [selectedJob]);
 
-  
   useEffect(() => {
     if (jobsData.length === 0) return;
     const firstOnPage = jobsData[(currentPage - 1) * jobsPerPage];
@@ -158,7 +165,9 @@ export default function Jobscart() {
       <div
         ref={headingRef}
         className={`p-4 sm:p-6 text-center transition-all duration-700 transform ${
-          showHeading ? "translate-y-0 opacity-100" : "-translate-y-10 opacity-0"
+          showHeading
+            ? "translate-y-0 opacity-100"
+            : "-translate-y-10 opacity-0"
         }`}
       >
         <h2 className="heading-bold mb-5">
@@ -190,18 +199,32 @@ export default function Jobscart() {
                 <div className="flex justify-between items-start gap-2">
                   <h3 className="content-semibold capitalize">{job.title}</h3>
                   <div className="flex items-center gap-1 whitespace-nowrap">
-                    <img src="/images/broserJobs/clockone.svg" alt="icon" className="h-3.5 w-3.5" />
-                    <span className="text-[10px] sm:text-[12px] font-roboto text-black">{job.time}</span>
+                    <img
+                      src="/images/broserJobs/clockone.svg"
+                      alt="icon"
+                      className="h-3.5 w-3.5"
+                    />
+                    <span className="text-[10px] sm:text-[12px] font-roboto text-black">
+                      {job.time}
+                    </span>
                   </div>
                 </div>
 
                 <div className="flex flex-wrap gap-3 mt-4 small-text !font-roboto">
                   <div className="flex items-center gap-1">
-                    <img src="/images/broserJobs/experienceIcon.svg" alt="icon" className="h-4 w-4 sm:h-5 sm:w-5" />
+                    <img
+                      src="/images/broserJobs/experienceIcon.svg"
+                      alt="icon"
+                      className="h-4 w-4 sm:h-5 sm:w-5"
+                    />
                     <span>{job.experience}</span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <img src="/images/broserJobs/locationIcon.svg" alt="icon" className="h-4 w-4 sm:h-5 sm:w-5" />
+                    <img
+                      src="/images/broserJobs/locationIcon.svg"
+                      alt="icon"
+                      className="h-4 w-4 sm:h-5 sm:w-5"
+                    />
                     <span>{job.location}</span>
                   </div>
                 </div>
@@ -237,7 +260,9 @@ export default function Jobscart() {
                 key={page}
                 onClick={() => handlePageClick(page)}
                 className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full content-semibold cursor-pointer ${
-                  currentPage === page ? "bg-gray-200 font-semibold" : "text-black"
+                  currentPage === page
+                    ? "bg-gray-200 font-semibold"
+                    : "text-black"
                 }`}
               >
                 {page}
@@ -249,7 +274,6 @@ export default function Jobscart() {
           </div>
         </div>
 
-        
         <div
           ref={detailsRef}
           key={selectedJob.id}
@@ -258,19 +282,35 @@ export default function Jobscart() {
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 border border-[#ECECEC] rounded-t-xl p-4 sm:p-6">
             <div>
               <h3 className="subheading-bold">{selectedJob.title}</h3>
-              <span className="text-xs text-gray-400 font-mono">{selectedJob.jobID}</span>
+              <span className="text-xs text-gray-400 font-mono">
+                {selectedJob.jobID}
+              </span>
               <div className="flex flex-wrap gap-3 mt-2 content">
                 <div className="flex items-center gap-1">
-                  <img src="/images/broserJobs/experienceIcon.svg" alt="icon" className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <img
+                    src="/images/broserJobs/experienceIcon.svg"
+                    alt="icon"
+                    className="h-4 w-4 sm:h-5 sm:w-5"
+                  />
                   <span>{selectedJob.experience}</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <img src="/images/broserJobs/locationIcon.svg" alt="icon" className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <img
+                    src="/images/broserJobs/locationIcon.svg"
+                    alt="icon"
+                    className="h-4 w-4 sm:h-5 sm:w-5"
+                  />
                   <span>{selectedJob.location}</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <img src="/images/broserJobs/clockone.svg" alt="icon" className="h-3.5 w-3.5" />
-                  <span className="text-[10px] sm:text-[12px] font-roboto">{selectedJob.time}</span>
+                  <img
+                    src="/images/broserJobs/clockone.svg"
+                    alt="icon"
+                    className="h-3.5 w-3.5"
+                  />
+                  <span className="text-[10px] sm:text-[12px] font-roboto">
+                    {selectedJob.time}
+                  </span>
                 </div>
               </div>
             </div>
@@ -279,17 +319,32 @@ export default function Jobscart() {
               className="bg-[#039BE6] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg shadow w-full sm:w-auto text-sm sm:text-base flex items-center justify-center gap-3 cursor-pointer font-montserrat"
             >
               Apply now
-              <img src="/images/broserJobs/applyArrow.svg" alt="icon" className="w-[14px] h-[18px]" />
+              <img
+                src="/images/broserJobs/applyArrow.svg"
+                alt="icon"
+                className="w-[14px] h-[18px]"
+              />
             </button>
           </div>
           <div className="flex flex-wrap gap-4 px-4 sm:px-6 pt-5 small-text text-gray-600 !font-montserrat">
-            <p><strong className="text-black">Salary:</strong> {selectedJob.salary}</p>
-            <p><strong className="text-black">Education:</strong> {selectedJob.education}</p>
-            <p><strong className="text-black">Openings:</strong> {selectedJob.openings}</p>
+            <p>
+              <strong className="text-black">Salary:</strong>{" "}
+              {selectedJob.salary}
+            </p>
+            <p>
+              <strong className="text-black">Education:</strong>{" "}
+              {selectedJob.education}
+            </p>
+            <p>
+              <strong className="text-black">Openings:</strong>{" "}
+              {selectedJob.openings}
+            </p>
           </div>
           {selectedJob.description ? (
             <div className="px-4 sm:px-6 pt-6">
-              <h4 className="content-semibold mb-2 !font-montserrat">Overview</h4>
+              <h4 className="content-semibold mb-2 !font-montserrat">
+                Overview
+              </h4>
               <div
                 className="small-text leading-[165%] ps-2 sm:ps-4 !font-inter prose max-w-none"
                 dangerouslySetInnerHTML={{ __html: selectedJob.description }}
@@ -298,17 +353,30 @@ export default function Jobscart() {
           ) : null}
           {selectedJob.qualificationCriteria ? (
             <div className="px-4 sm:px-6 pt-6">
-              <h4 className="content-semibold mb-2 !font-montserrat">Qualification Criteria</h4>
+              <h4 className="content-semibold mb-2 !font-montserrat">
+                Qualification Criteria
+              </h4>
               <div
                 className="small-text leading-[165%] ps-2 sm:ps-4 !font-inter prose max-w-none"
-                dangerouslySetInnerHTML={{ __html: selectedJob.qualificationCriteria }}
+                dangerouslySetInnerHTML={{
+                  __html: selectedJob.qualificationCriteria,
+                }}
               />
             </div>
           ) : null}
           <div className="mt-6 px-4 sm:px-6 space-y-2 small-text !font-montserrat">
-            <p><strong className="!font-semibold">Role:</strong> {selectedJob.role}</p>
-            <p><strong className="!font-semibold">Industry:</strong> {selectedJob.industry}</p>
-            <p><strong className="!font-semibold">Employment Type:</strong> {selectedJob.employmentType}</p>
+            <p>
+              <strong className="!font-semibold">Role:</strong>{" "}
+              {selectedJob.role}
+            </p>
+            <p>
+              <strong className="!font-semibold">Industry:</strong>{" "}
+              {selectedJob.industry}
+            </p>
+            <p>
+              <strong className="!font-semibold">Employment Type:</strong>{" "}
+              {selectedJob.employmentType}
+            </p>
           </div>
           {selectedJob.skills.length > 0 && (
             <div className="mt-6 px-4 sm:px-6">
@@ -331,7 +399,11 @@ export default function Jobscart() {
               className="w-full sm:w-auto bg-[#039BE6] text-white px-5.5 py-3 rounded-lg shadow flex items-center justify-center gap-4 content cursor-pointer"
             >
               Apply now
-              <img src="/images/broserJobs/applyArrow.svg" alt="icon" className="w-[28px] h-[28px]" />
+              <img
+                src="/images/broserJobs/applyArrow.svg"
+                alt="icon"
+                className="w-[28px] h-[28px]"
+              />
             </button>
           </div>
         </div>
