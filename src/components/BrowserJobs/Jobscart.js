@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
+import { timeAgo } from "@/utils/commonFunctions";
 
 export default function Jobscart() {
   const router = useRouter();
@@ -73,7 +74,7 @@ export default function Jobscart() {
           location:
             job.location?.length > 0
               ? job.location.join(", ")
-              : "Remote / Not specified",
+              : "Not specified",
           time: job.published_at
             ? new Date(job.published_at).toLocaleDateString("en-IN", {
                 day: "numeric",
@@ -205,7 +206,7 @@ export default function Jobscart() {
                       className="h-3.5 w-3.5"
                     />
                     <span className="text-[10px] sm:text-[12px] font-roboto text-black">
-                      {job.time}
+                      {timeAgo(job.time)}
                     </span>
                   </div>
                 </div>
@@ -229,7 +230,7 @@ export default function Jobscart() {
                   </div>
                 </div>
 
-                <div className="mt-3 flex items-center gap-2">
+                {/* <div className="mt-3 flex items-center gap-2">
                   {job.openings > 0 && (
                     <span className="text-[11px] bg-blue-50 text-[#039BE6] px-2 py-0.5 rounded-full font-medium">
                       {job.openings} opening{job.openings !== 1 ? "s" : ""}
@@ -238,7 +239,7 @@ export default function Jobscart() {
                   <span className="text-[11px] bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">
                     {job.employmentType}
                   </span>
-                </div>
+                </div> */}
 
                 <div className="mt-4 content">
                   {job.skills.slice(0, 4).map((s, i) => (
@@ -281,7 +282,9 @@ export default function Jobscart() {
         >
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 border border-[#ECECEC] rounded-t-xl p-4 sm:p-6">
             <div>
-              <h3 className="subheading-bold">{selectedJob.title}</h3>
+              <h3 className="subheading-bold capitalize">
+                {selectedJob.title}
+              </h3>
               <span className="text-xs text-gray-400 font-mono">
                 {selectedJob.jobID}
               </span>
@@ -309,7 +312,7 @@ export default function Jobscart() {
                     className="h-3.5 w-3.5"
                   />
                   <span className="text-[10px] sm:text-[12px] font-roboto">
-                    {selectedJob.time}
+                    {timeAgo(selectedJob.time)}
                   </span>
                 </div>
               </div>
@@ -358,7 +361,16 @@ export default function Jobscart() {
                 dangerouslySetInnerHTML={{ __html: selectedJob.description }}
               />
             </div>
-          ) : null}
+          ) : (
+            <div className="px-4 sm:px-6 pt-6">
+              <h4 className="content-semibold mb-2 !font-montserrat">
+                Overview
+              </h4>
+              <p className="text-gray-400 text-sm ps-2">
+                No description available.
+              </p>
+            </div>
+          )}
           {selectedJob.qualificationCriteria ? (
             <div className="px-4 sm:px-6 pt-6">
               <h4 className="content-semibold mb-2 !font-montserrat">
@@ -379,7 +391,16 @@ export default function Jobscart() {
                 }}
               />
             </div>
-          ) : null}
+          ) : (
+            <div className="px-4 sm:px-6 pt-6">
+              <h4 className="content-semibold mb-2 !font-montserrat">
+                Qualification Criteria
+              </h4>
+              <p className="text-gray-400 text-sm ps-2">
+                No qualification criteria available.
+              </p>
+            </div>
+          )}
           <div className="mt-6 px-4 sm:px-6 space-y-2 small-text !font-montserrat">
             <p>
               <strong className="!font-semibold">Role:</strong>{" "}
