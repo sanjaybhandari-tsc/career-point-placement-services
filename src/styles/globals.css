@@ -168,10 +168,10 @@ body {
 
 .react-select__control {
   width: 100% !important;
-  border: none !important;
   box-shadow: none !important;
+  min-height: 48px !important;
   background: transparent !important;
-  min-height: 100% !important;
+  /* min-height: 100% !important; */
 }
 
 .react-select__container {
@@ -180,12 +180,12 @@ body {
 
 .react-select__value-container {
   width: 100% !important;
-  padding: 0 !important;
+  padding: 0 12px !important;
 }
 
 /* Remove blue focus border */
 .react-select__control--is-focused {
-  border: none !important;
+  min-height: 48px !important;
   box-shadow: none !important;
 }
 
@@ -193,8 +193,9 @@ body {
 .react-select__indicator-separator {
   display: none !important;
 }
-
-
+.react-select__menu-list {
+  padding: 0 !important;
+}
 /* Banner Heading */
 .banner-heading {
   @apply text-[24px] md:text-[36px] lg:text-[48px] font-bold;
@@ -290,6 +291,6 @@ body {
     }
   }
 }
-.Common_btn{
-   @apply py-2 px-4 text-sm sm:px-6 sm:py-3;
+.Common_btn {
+  @apply py-2 px-4 text-sm sm:px-6 sm:py-3;
 }

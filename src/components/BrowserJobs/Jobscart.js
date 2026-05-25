@@ -1,223 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 
-const jobsData = [
-  {
-    id: 1,
-    title: "Project manager",
-    experience: "2-3 yrs",
-    location: "Mumbai",
-    Buildingimage: "/images/broserJobs/industryIcon.svg",
-    Building: "Building Material",
-    time: "2 hours ago",
-    description: `Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida vestibulum habitant magnis mi aliquam senectus massa tellus interdum velit volutpat porttitor quis eu massa suspendisse et amet laoreet lobortis auctor pharetra in sodales at netus nunc montes faucibus vitae fringilla nibh.Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida vestibulum habitant magnis mi aliquam senectus massa tellus interdum velit volutpat porttitor quis eu massa suspendisse et amet laoreet lobortis auctor pharetra in sodales at netus nunc montes faucibus vitae fringilla nibh.`,
-    responsibilities: [
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-    ],
-    role: "Project Manager",
-    industry: "Building Material",
-    employmentType: "Full Time , Permanent",
-    skills: ["Communication", "Error Handling", "Problem Solving", "Client Handling"],
-  },
-  {
-    id: 2,
-    title: "Frontend Developer",
-    experience: "1-3 yrs",
-    location: "Bangalore",
-    time: "1 hour ago",
-    description: `Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida vestibulum habitant magnis mi aliquam senectus massa tellus interdum velit volutpat porttitor quis eu massa suspendisse et amet laoreet lobortis auctor pharetra in sodales at netus nunc montes faucibus vitae fringilla nibh.Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida vestibulum habitant magnis mi aliquam senectus massa tellus interdum velit volutpat porttitor quis eu massa suspendisse et amet laoreet lobortis auctor pharetra in sodales at netus nunc montes faucibus vitae fringilla nibh.`,
-    responsibilities: [
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-    ],
-    role: "Frontend Developer",
-    industry: "IT",
-    employmentType: "Full Time",
-    skills: ["React", "JavaScript", "CSS"],
-  },
-  {
-    id: 3,
-    title: "Backend Developer",
-    experience: "2-4 yrs",
-    location: "Hyderabad",
-    time: "3 hours ago",
-    description: `Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida vestibulum habitant magnis mi aliquam senectus massa tellus interdum velit volutpat porttitor quis eu massa suspendisse et amet laoreet lobortis auctor pharetra in sodales at netus nunc montes faucibus vitae fringilla nibh.Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida vestibulum habitant magnis mi aliquam senectus massa tellus interdum velit volutpat porttitor quis eu massa suspendisse et amet laoreet lobortis auctor pharetra in sodales at netus nunc montes faucibus vitae fringilla nibh.`,
-    responsibilities: [
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-    ],
-    role: "Backend Developer",
-    industry: "IT",
-    employmentType: "Full Time",
-    skills: ["Node.js", "MongoDB"],
-  },
-  {
-    id: 4,
-    title: "UI Designer",
-    experience: "1-2 yrs",
-    location: "Delhi",
-    time: "4 hours ago",
-    description: `Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida vestibulum habitant magnis mi aliquam senectus massa tellus interdum velit volutpat porttitor quis eu massa suspendisse et amet laoreet lobortis auctor pharetra in sodales at netus nunc montes faucibus vitae fringilla nibh.Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida vestibulum habitant magnis mi aliquam senectus massa tellus interdum velit volutpat porttitor quis eu massa suspendisse et amet laoreet lobortis auctor pharetra in sodales at netus nunc montes faucibus vitae fringilla nibh.`,
-    responsibilities: ["Design UI", "User research"],
-    role: "Designer",
-    industry: "Design",
-    employmentType: "Full Time",
-    skills: ["Figma", "UI/UX"],
-  },
-  {
-    id: 5,
-    title: "Project manager",
-    experience: "2-3 yrs",
-    location: "Mumbai",
-    Buildingimage: "/images/broserJobs/industryIcon.svg",
-    Building: "Building Material",
-    time: "2 hours ago",
-    description: `Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida vestibulum habitant magnis mi aliquam senectus massa tellus interdum velit volutpat porttitor quis eu massa suspendisse et amet laoreet lobortis auctor pharetra in sodales at netus nunc montes faucibus vitae fringilla nibh.`,
-    responsibilities: [
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-    ],
-    role: "Project Manager",
-    industry: "Building Material",
-    employmentType: "Full Time , Permanent",
-    skills: ["Communication", "Error Handling", "Problem Solving", "Client Handling"],
-  },
-  {
-    id: 6,
-    title: "Frontend Developer",
-    experience: "1-3 yrs",
-    location: "Bangalore",
-    time: "1 hour ago",
-    description: `Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida vestibulum habitant magnis mi aliquam senectus massa tellus interdum velit volutpat porttitor quis eu massa suspendisse et amet laoreet lobortis auctor pharetra in sodales at netus nunc montes faucibus vitae fringilla nibh.`,
-    responsibilities: [
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-    ],
-    role: "Frontend Developer",
-    industry: "IT",
-    employmentType: "Full Time",
-    skills: ["React", "JavaScript", "CSS"],
-  },
-  {
-    id: 7,
-    title: "Backend Developer",
-    experience: "2-4 yrs",
-    location: "Hyderabad",
-    time: "3 hours ago",
-    description: `Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida vestibulum habitant magnis mi aliquam senectus massa tellus interdum velit volutpat porttitor quis eu massa suspendisse et amet laoreet lobortis auctor pharetra in sodales at netus nunc montes faucibus vitae fringilla nibh.`,
-    responsibilities: [
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-    ],
-    role: "Backend Developer",
-    industry: "IT",
-    employmentType: "Full Time",
-    skills: ["Node.js", "MongoDB"],
-  },
-  {
-    id: 8,
-    title: "UI Designer",
-    experience: "1-2 yrs",
-    location: "Delhi",
-    time: "4 hours ago",
-    description: `Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida vestibulum habitant magnis mi aliquam senectus massa tellus interdum velit volutpat porttitor quis eu massa suspendisse et amet laoreet lobortis auctor pharetra in sodales at netus nunc montes faucibus vitae fringilla nibh.`,
-    responsibilities: ["Design UI", "User research"],
-    role: "Designer",
-    industry: "Design",
-    employmentType: "Full Time",
-    skills: ["Figma", "UI/UX"],
-  },
-  {
-    id: 9,
-    title: "Project manager",
-    experience: "2-3 yrs",
-    location: "Mumbai",
-    Buildingimage: "/images/broserJobs/industryIcon.svg",
-    Building: "Building Material",
-    time: "2 hours ago",
-    description: `Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida vestibulum habitant magnis mi aliquam senectus massa tellus interdum velit volutpat porttitor quis eu massa suspendisse et amet laoreet lobortis auctor pharetra in sodales at netus nunc montes faucibus vitae fringilla nibh.`,
-    responsibilities: [
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-    ],
-    role: "Project Manager",
-    industry: "Building Material",
-    employmentType: "Full Time , Permanent",
-    skills: ["Communication", "Error Handling", "Problem Solving", "Client Handling"],
-  },
-  {
-    id: 10,
-    title: "Frontend Developer",
-    experience: "1-3 yrs",
-    location: "Bangalore",
-    time: "1 hour ago",
-    description: `Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida vestibulum habitant magnis mi aliquam senectus massa tellus interdum velit volutpat porttitor quis eu massa suspendisse et amet laoreet lobortis auctor pharetra in sodales at netus nunc montes faucibus vitae fringilla nibh.`,
-    responsibilities: [
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-    ],
-    role: "Frontend Developer",
-    industry: "IT",
-    employmentType: "Full Time",
-    skills: ["React", "JavaScript", "CSS"],
-  },
-  {
-    id: 11,
-    title: "Backend Developer",
-    experience: "2-4 yrs",
-    location: "Hyderabad",
-    time: "3 hours ago",
-    description: `Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida vestibulum habitant magnis mi aliquam senectus massa tellus interdum velit volutpat porttitor quis eu massa suspendisse et amet laoreet lobortis auctor pharetra in sodales at netus nunc montes faucibus vitae fringilla nibh.`,
-    responsibilities: [
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-      "Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida ",
-    ],
-    role: "Backend Developer",
-    industry: "IT",
-    employmentType: "Full Time",
-    skills: ["Node.js", "MongoDB"],
-  },
-  {
-    id: 12,
-    title: "UI Designer",
-    experience: "1-2 yrs",
-    location: "Delhi",
-    time: "4 hours ago",
-    description: `Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida vestibulum habitant magnis mi aliquam senectus massa tellus interdum velit volutpat porttitor quis eu massa suspendisse et amet laoreet lobortis auctor pharetra in sodales at netus nunc montes faucibus vitae fringilla nibh.`,
-    responsibilities: ["Design UI", "User research"],
-    role: "Designer",
-    industry: "Design",
-    employmentType: "Full Time",
-    skills: ["Figma", "UI/UX"],
-  },
-  {
-    id: 13,
-    title: "UI Designer",
-    experience: "1-2 yrs",
-    location: "Delhi",
-    time: "4 hours ago",
-    description: `Lorem ipsum in consectetur vitae pretium lorem porttitor gravida sapien amet at viverra consequat blandit nisl phasellus gravida vestibulum habitant magnis mi aliquam senectus massa tellus interdum velit volutpat porttitor quis eu massa suspendisse et amet laoreet lobortis auctor pharetra in sodales at netus nunc montes faucibus vitae fringilla nibh.`,
-    responsibilities: ["Design UI", "User research"],
-    role: "Designer",
-    industry: "Design",
-    employmentType: "Full Time",
-    skills: ["Figma", "UI/UX"],
-  },
-];
-
 export default function Jobscart() {
   const router = useRouter();
-  const [selectedJob, setSelectedJob] = useState(jobsData[0]);
+  const [jobsData, setJobsData] = useState([]);   
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const [selectedJob, setSelectedJob] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [showHeading, setShowHeading] = useState(false);
   const [showContent, setShowContent] = useState(false);
@@ -225,11 +15,13 @@ export default function Jobscart() {
   const headingRef = useRef(null);
   const containerRef = useRef(null);
   const detailsRef = useRef(null);
+
   const jobsPerPage = 5;
   const indexOfLastJob = currentPage * jobsPerPage;
   const indexOfFirstJob = indexOfLastJob - jobsPerPage;
   const currentJobs = jobsData.slice(indexOfFirstJob, indexOfLastJob);
   const totalPages = Math.ceil(jobsData.length / jobsPerPage);
+
   const scrollToDetails = () => {
     if (window.innerWidth < 1024) {
       setTimeout(() => {
@@ -237,57 +29,138 @@ export default function Jobscart() {
       }, 100);
     }
   };
+
   const handleJobSelect = (job) => {
     setSelectedJob(job);
     scrollToDetails();
   };
 
-  const handlePrevPage = () => {
-    setCurrentPage((p) => Math.max(p - 1, 1));
-  };
-  const handleNextPage = () => {
-    setCurrentPage((p) => Math.min(p + 1, totalPages));
-  };
-  const handlePageClick = (page) => {
-    setCurrentPage(page);
-  };
+  const handlePrevPage = () => setCurrentPage((p) => Math.max(p - 1, 1));
+  const handleNextPage = () => setCurrentPage((p) => Math.min(p + 1, totalPages));
+  const handlePageClick = (page) => setCurrentPage(page);
+
   const handleApply = (job) => {
     localStorage.setItem("job", JSON.stringify(job));
     router.push("/jobs/submit-your-cv");
   };
+
+
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        const response = await fetch(
+          "https://dev.collectivhire.com/api/ats/jobs/client/jobs?api_key=CPPSe0d9c8b7a6f5e4d3c2b1a9f8a7c6d4b322052026",
+          { method: "GET", headers: { "Content-Type": "application/json" } }
+        );
+
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+        const result = await response.json();
+
+        const mapped = result.data.map((job) => ({
+          id: job.job_id,
+          title: job.job_title,
+          experience:
+            job.min_experience != null && job.max_experience != null
+              ? `${job.min_experience}-${job.max_experience} yrs`
+              : job.max_experience != null
+              ? `Up to ${job.max_experience} yrs`
+              : "Not specified",
+          location:
+            job.location?.length > 0 ? job.location.join(", ") : "Remote / Not specified",
+          time: job.published_at
+            ? new Date(job.published_at).toLocaleDateString("en-IN", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+              })
+            : "Recently posted",
+          //Displaying raw HTML via dangerouslySetInnerHTML 
+          description: job.job_description || "",
+          qualificationCriteria: job.qualification_criteria || "",
+          responsibilities: [], 
+          role: job.job_role || "Not specified",
+          industry: job.business_vertical || "Not specified",
+          employmentType: [job.job_type, job.job_mode].filter(Boolean).join(", "),
+          skills: [...(job.primary_skills || []), ...(job.key_skills || [])],
+          jobID: job.job_ID,
+          openings: job.number_of_opening,
+          education: job.education || "Not specified",
+          salary:
+            job.min_salary != null && job.max_salary != null
+              ? `${job.salary_currency || ""} ${job.min_salary.toLocaleString()} – ${job.max_salary.toLocaleString()}${job.salary_frequency ? " / " + job.salary_frequency : ""}`.trim()
+              : "Not disclosed",
+          clientName: job.client_name,
+        }));
+
+        setJobsData(mapped);
+        setSelectedJob(mapped[0] ?? null);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchJobs();
+  }, []);
+
   useEffect(() => {
     setAnimate(false);
     const t = setTimeout(() => setAnimate(true), 10);
     return () => clearTimeout(t);
   }, [selectedJob]);
+
+  
   useEffect(() => {
-    setSelectedJob(currentJobs[0]);
-  }, [currentPage]);
+    if (jobsData.length === 0) return;
+    const firstOnPage = jobsData[(currentPage - 1) * jobsPerPage];
+    if (firstOnPage) setSelectedJob(firstOnPage);
+  }, [currentPage, jobsData]);
+
   useEffect(() => {
     const handleScroll = () => {
       const triggerBottom = window.innerHeight * 0.85;
-
       if (headingRef.current) {
         const rect = headingRef.current.getBoundingClientRect();
         if (rect.top < triggerBottom) setShowHeading(true);
       }
-
       if (containerRef.current) {
         const rect = containerRef.current.getBoundingClientRect();
         if (rect.top < triggerBottom) setShowContent(true);
       }
     };
-
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <p className="text-gray-500">Loading jobs...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <p className="text-red-500">Failed to load jobs: {error}</p>
+      </div>
+    );
+  }
+
+  if (!selectedJob) return null;
+
   return (
     <div className="px-4 pt-6 md:p-8 bg-white lg:px-25 min-h-screen">
-
       <div
-        ref={headingRef} className={`p-4 sm:p-6 text-center transition-all duration-700 transform ${showHeading ? "translate-y-0 opacity-100" : "-translate-y-10 opacity-0"}`}>
+        ref={headingRef}
+        className={`p-4 sm:p-6 text-center transition-all duration-700 transform ${
+          showHeading ? "translate-y-0 opacity-100" : "-translate-y-10 opacity-0"
+        }`}
+      >
         <h2 className="heading-bold mb-5">
           Featured <span className="text-[#0277BD]">Jobs</span>
         </h2>
@@ -297,7 +170,11 @@ export default function Jobscart() {
         </p>
       </div>
       <div
-        ref={containerRef} className={`mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6 py-6 transition-all duration-700 transform ${ showContent ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0" }`}>
+        ref={containerRef}
+        className={`mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6 py-6 transition-all duration-700 transform ${
+          showContent ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+        }`}
+      >
         <div className="w-full">
           <div className="space-y-4 sm:space-y-5">
             {currentJobs.map((job) => (
@@ -305,14 +182,16 @@ export default function Jobscart() {
                 key={job.id}
                 onClick={() => handleJobSelect(job)}
                 className={`p-4 sm:p-5 rounded-2xl border cursor-pointer transition ${
-                  selectedJob.id === job.id ? "border-[#039BE6] border-2": "border-2 border-[#ECECEC] hover:shadow-sm"}`}>
+                  selectedJob.id === job.id
+                    ? "border-[#039BE6] border-2"
+                    : "border-2 border-[#ECECEC] hover:shadow-sm"
+                }`}
+              >
                 <div className="flex justify-between items-start gap-2">
-                  <h3 className="content-semibold">{job.title}</h3>
+                  <h3 className="content-semibold capitalize">{job.title}</h3>
                   <div className="flex items-center gap-1 whitespace-nowrap">
                     <img src="/images/broserJobs/clockone.svg" alt="icon" className="h-3.5 w-3.5" />
-                    <span className="text-[10px] sm:text-[12px] font-roboto text-black">
-                      {job.time}
-                    </span>
+                    <span className="text-[10px] sm:text-[12px] font-roboto text-black">{job.time}</span>
                   </div>
                 </div>
 
@@ -325,18 +204,24 @@ export default function Jobscart() {
                     <img src="/images/broserJobs/locationIcon.svg" alt="icon" className="h-4 w-4 sm:h-5 sm:w-5" />
                     <span>{job.location}</span>
                   </div>
-                  {job.Building && job.Buildingimage && (
-                    <div className="flex items-center gap-1">
-                      <img src={job.Buildingimage} alt="icon" className="h-4 w-4 sm:h-5 sm:w-5" />
-                      <span>{job.Building}</span>
-                    </div>
+                </div>
+
+                <div className="mt-3 flex items-center gap-2">
+                  {job.openings > 0 && (
+                    <span className="text-[11px] bg-blue-50 text-[#039BE6] px-2 py-0.5 rounded-full font-medium">
+                      {job.openings} opening{job.openings !== 1 ? "s" : ""}
+                    </span>
                   )}
+                  <span className="text-[11px] bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">
+                    {job.employmentType}
+                  </span>
                 </div>
 
                 <div className="mt-4 content">
-                  {job.skills.map((s, i) => (
+                  {job.skills.slice(0, 4).map((s, i) => (
                     <span key={i} className="me-2">
-                      <span className="me-1">•</span>{s}
+                      <span className="me-1">•</span>
+                      {s}
                     </span>
                   ))}
                 </div>
@@ -347,7 +232,6 @@ export default function Jobscart() {
             <button onClick={handlePrevPage} className="cursor-pointer">
               <img src="/images/broserJobs/Arrowleft.svg" alt="arrow" />
             </button>
-
             {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
               <button
                 key={page}
@@ -359,19 +243,22 @@ export default function Jobscart() {
                 {page}
               </button>
             ))}
-
             <button onClick={handleNextPage} className="cursor-pointer">
               <img src="/images/broserJobs/Arrowright.svg" alt="arrow" />
             </button>
           </div>
         </div>
+
+        
         <div
           ref={detailsRef}
           key={selectedJob.id}
-          className={`lg:col-span-2 border border-gray-200 rounded-xl w-full ${animate ? "animate-fadeIn" : "opacity-0"}`}>
+          className={`lg:col-span-2 border border-gray-200 rounded-xl w-full ${animate ? "animate-fadeIn" : "opacity-0"}`}
+        >
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 border border-[#ECECEC] rounded-t-xl p-4 sm:p-6">
             <div>
               <h3 className="subheading-bold">{selectedJob.title}</h3>
+              <span className="text-xs text-gray-400 font-mono">{selectedJob.jobID}</span>
               <div className="flex flex-wrap gap-3 mt-2 content">
                 <div className="flex items-center gap-1">
                   <img src="/images/broserJobs/experienceIcon.svg" alt="icon" className="h-4 w-4 sm:h-5 sm:w-5" />
@@ -387,7 +274,6 @@ export default function Jobscart() {
                 </div>
               </div>
             </div>
-
             <button
               onClick={() => handleApply(selectedJob)}
               className="bg-[#039BE6] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg shadow w-full sm:w-auto text-sm sm:text-base flex items-center justify-center gap-3 cursor-pointer font-montserrat"
@@ -396,40 +282,54 @@ export default function Jobscart() {
               <img src="/images/broserJobs/applyArrow.svg" alt="icon" className="w-[14px] h-[18px]" />
             </button>
           </div>
-          <div className="px-4 sm:px-6 pt-6">
-            <h4 className="content-semibold mb-2 !font-montserrat">Overview</h4>
-            <p className="small-text leading-[165%] ps-2 sm:ps-4 !font-inter">
-              {selectedJob.description}
-            </p>
+          <div className="flex flex-wrap gap-4 px-4 sm:px-6 pt-5 small-text text-gray-600 !font-montserrat">
+            <p><strong className="text-black">Salary:</strong> {selectedJob.salary}</p>
+            <p><strong className="text-black">Education:</strong> {selectedJob.education}</p>
+            <p><strong className="text-black">Openings:</strong> {selectedJob.openings}</p>
           </div>
-          <div className="mt-6 px-4 sm:px-6">
-            <h4 className="content-semibold mb-2 !font-montserrat">Responsibilities</h4>
-            <div className="space-y-2 !font-inter">
-              {selectedJob.responsibilities.map((item, i) => (
-                <div key={i} className="flex items-start gap-2 ps-2 sm:ps-4">
-                  <p className="inline-block md:w-1.5 md:h-1.5 w-0.5 h-0.5 bg-black rounded-full mt-2 flex-shrink-0" />
-                  <p className="small-text">{item}</p>
-                </div>
-              ))}
+          {selectedJob.description ? (
+            <div className="px-4 sm:px-6 pt-6">
+              <h4 className="content-semibold mb-2 !font-montserrat">Overview</h4>
+              <div
+                className="small-text leading-[165%] ps-2 sm:ps-4 !font-inter prose max-w-none"
+                dangerouslySetInnerHTML={{ __html: selectedJob.description }}
+              />
             </div>
-          </div>
+          ) : null}
+          {selectedJob.qualificationCriteria ? (
+            <div className="px-4 sm:px-6 pt-6">
+              <h4 className="content-semibold mb-2 !font-montserrat">Qualification Criteria</h4>
+              <div
+                className="small-text leading-[165%] ps-2 sm:ps-4 !font-inter prose max-w-none"
+                dangerouslySetInnerHTML={{ __html: selectedJob.qualificationCriteria }}
+              />
+            </div>
+          ) : null}
           <div className="mt-6 px-4 sm:px-6 space-y-2 small-text !font-montserrat">
-            <p><strong className="!font-semibold">Role :</strong> {selectedJob.role}</p>
-            <p><strong className="!font-semibold">Industry :</strong> {selectedJob.industry}</p>
-            <p><strong className="!font-semibold">Employement Type :</strong> {selectedJob.employmentType}</p>
+            <p><strong className="!font-semibold">Role:</strong> {selectedJob.role}</p>
+            <p><strong className="!font-semibold">Industry:</strong> {selectedJob.industry}</p>
+            <p><strong className="!font-semibold">Employment Type:</strong> {selectedJob.employmentType}</p>
           </div>
-          <div className="mt-6 px-4 sm:px-6">
-            <h4 className="content-semibold mb-2">Skills</h4>
-            <div className="flex flex-wrap gap-3 small-text !font-montserrat ps-2 sm:ps-4">
-              {selectedJob.skills.map((s, i) => (
-                <span key={i}>• {s}</span>
-              ))}
+          {selectedJob.skills.length > 0 && (
+            <div className="mt-6 px-4 sm:px-6">
+              <h4 className="content-semibold mb-2">Skills</h4>
+              <div className="flex flex-wrap gap-3 small-text !font-montserrat ps-2 sm:ps-4">
+                {selectedJob.skills.map((s, i) => (
+                  <span
+                    key={i}
+                    className="bg-gray-100 px-3 py-1 rounded-full text-gray-700"
+                  >
+                    {s}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
           <div className="p-4 sm:p-6">
             <button
               onClick={() => handleApply(selectedJob)}
-              className="w-full sm:w-auto bg-[#039BE6] text-white px-5.5 py-3 rounded-lg shadow flex items-center justify-center gap-4 content cursor-pointer">
+              className="w-full sm:w-auto bg-[#039BE6] text-white px-5.5 py-3 rounded-lg shadow flex items-center justify-center gap-4 content cursor-pointer"
+            >
               Apply now
               <img src="/images/broserJobs/applyArrow.svg" alt="icon" className="w-[28px] h-[28px]" />
             </button>

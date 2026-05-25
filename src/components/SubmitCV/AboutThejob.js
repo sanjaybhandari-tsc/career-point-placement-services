@@ -23,7 +23,7 @@ export default function AboutTheJob() {
   return (
     <section  aria-label="Job details section ">
       <div className="bg-white !font-roboto">
-        <div className="w-full  pt-16 px-[15px] lg:px-25 xl:pe-30 xl:ps-25">
+        <div className="w-full  pt-16 px-4 md:px-14 lg:px-[100px]">
 
           <p className="text-[#0277BD] main-subheading font-roboto mb-4">
             You are applying for
@@ -35,7 +35,7 @@ export default function AboutTheJob() {
 
               <div className="flex flex-row md:flex-row md:items-center justify-between gap-3">
 
-                <h2 className="content-semibold text-[#333333] flex items-center md:block">
+                <h2 className="content-semibold text-[#333333]  capitalize flex items-center md:block">
                   {job.title}
                 </h2>
 
@@ -116,9 +116,13 @@ export default function AboutTheJob() {
                 <h3 className="content-semibold leading-[100%] text-black mb-3 !font-montserrat ">
                   Overview
                 </h3>
-                <p className=" small-text leading-[165%] text-black lg:ps-2 !font-inter">
+                {/* <p className=" small-text leading-[165%] text-black lg:ps-2 !font-inter">
                   {job.description}
-                </p>
+                </p> */}
+                <div
+  className="small-text leading-[165%] text-black lg:ps-2 !font-inter"
+  dangerouslySetInnerHTML={{ __html: job.description }}
+/>
               </div>
               <div className="mb-6">
                 <h3 className=" content-semibold leading-[100%] text-black mb-3 !Sfont-montserrat">
