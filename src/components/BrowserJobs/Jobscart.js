@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useRouter } from "next/router";
 import { timeAgo } from "@/utils/commonFunctions";
 
 export default function Jobscart() {
-  const router = useRouter();
   const [jobsData, setJobsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -44,10 +42,8 @@ export default function Jobscart() {
     setCurrentPage((p) => Math.min(p + 1, totalPages));
   const handlePageClick = (page) => setCurrentPage(page);
 
-  const handleApply = (job) => {
-    localStorage.setItem("job", JSON.stringify(job));
-    router.push("/jobs/submit-your-cv");
-  };
+  const getApplyUrl = (job) => 
+    `https://collectivhire.com/jobs/detail?id=${btoa(String(job.id))}`;
 
   useEffect(() => {
     const fetchJobs = async () => {
@@ -317,8 +313,8 @@ export default function Jobscart() {
                 </div>
               </div>
             </div>
-            <button
-              onClick={() => handleApply(selectedJob)}
+            <a
+              href={getApplyUrl(selectedJob)}
               className="bg-[#039BE6] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg shadow w-full sm:w-auto text-sm sm:text-base flex items-center justify-center gap-3 cursor-pointer font-montserrat"
             >
               Apply now
@@ -327,7 +323,7 @@ export default function Jobscart() {
                 alt="icon"
                 className="w-[14px] h-[18px]"
               />
-            </button>
+            </a>
           </div>
           <div className="flex flex-wrap gap-4 px-4 sm:px-6 pt-5 small-text text-gray-600 !font-montserrat">
             <p>
@@ -431,8 +427,8 @@ export default function Jobscart() {
             </div>
           )}
           <div className="p-4 sm:p-6">
-            <button
-              onClick={() => handleApply(selectedJob)}
+            <a
+              href={getApplyUrl(selectedJob)}
               className="w-full sm:w-auto bg-[#039BE6] text-white px-5.5 py-3 rounded-lg shadow flex items-center justify-center gap-4 content cursor-pointer"
             >
               Apply now
@@ -441,7 +437,7 @@ export default function Jobscart() {
                 alt="icon"
                 className="w-[28px] h-[28px]"
               />
-            </button>
+            </a>
           </div>
         </div>
       </div>
